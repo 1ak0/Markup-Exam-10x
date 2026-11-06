@@ -1,94 +1,189 @@
-# Georgian Spotify 🎧
+<div align="center">
 
-Spotify-ს ინტერფეისის მარკაპი (HTML + SCSS + JavaScript), შექმნილი საგამოცდო პროექტად.
-პროექტი მოიცავს მთავარ გვერდს და 13 შიდა გვერდს, მუქ/ნათელ თემას და ადაპტირებულ დიზაინს მობილურისთვის, ტაბლეტისთვის და დესკტოპისთვის.
+# 🎧 Georgian Spotify
 
-![Desktop view](docs/screenshot-desktop.png)
+**Spotify-ის ინტერფეისის რესპონსიული მარკაპი, შექმნილი HTML-ით, SCSS-ით და JavaScript-ით**
 
-<p align="center">
-  <img src="docs/screenshot-mobile.png" alt="Mobile view" width="260" />
-</p>
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-## გვერდები
+[**🔗 Live Demo**](https://1ak0.github.io/Markup-Exam-10x/) · [**📂 კოდი**](https://github.com/1ak0/Markup-Exam-10x)
 
-| გვერდი | ფაილი |
+<br />
+
+<img src="docs/screenshot-desktop.png" alt="Georgian Spotify, დესკტოპის ვერსია" width="100%" />
+
+</div>
+
+---
+
+## 📑 სარჩევი
+
+- [პროექტის შესახებ](#-პროექტის-შესახებ)
+- [სქრინშოტები](#-სქრინშოტები)
+- [ფუნქციონალი](#-ფუნქციონალი)
+- [გვერდები](#-გვერდები)
+- [ტექნოლოგიები](#-ტექნოლოგიები)
+- [პროექტის სტრუქტურა](#-პროექტის-სტრუქტურა)
+- [გაშვება](#-გაშვება)
+- [ავტორი](#-ავტორი)
+
+---
+
+## 📌 პროექტის შესახებ
+
+**Georgian Spotify** არის Spotify-ის ვებ-აპლიკაციის ინტერფეისის მარკაპი, შექმნილი საგამოცდო პროექტად.
+პროექტი მოიცავს **14 გვერდს** და სამივე ზომაზე მუშაობს: მობილური, ტაბლეტი და დესკტოპი.
+
+მთავარი მიზანი იყო:
+
+- სუფთა, სემანტიკური HTML სტრუქტურა
+- მოდულური SCSS არქიტექტურა
+- mobile-first რესპონსიული დიზაინი
+- ინტერაქტიული ელემენტები ბიბლიოთეკების გარეშე, სუფთა JavaScript-ით
+
+---
+
+## 📸 სქრინშოტები
+
+<table>
+  <tr>
+    <td align="center" width="70%"><b>Desktop</b></td>
+    <td align="center" width="30%"><b>Mobile</b></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshot-desktop.png" alt="დესკტოპის ვერსია" /></td>
+    <td><img src="docs/screenshot-mobile.png" alt="მობილური ვერსია" /></td>
+  </tr>
+</table>
+
+---
+
+## ✨ ფუნქციონალი
+
+| | ფუნქცია | აღწერა |
+| :---: | --- | --- |
+| 🌗 | **მუქი / ნათელი თემა** | გადამრთველი ზედა მენიუში. არჩევანი ინახება `localStorage`-ში და გვერდის განახლების შემდეგაც რჩება |
+| 📱 | **რესპონსიული დიზაინი** | mobile-first მიდგომა, ცალკე ნავიგაცია მობილურისთვის და დესკტოპისთვის |
+| 👥 | **Friends Activity** | მეგობრების აქტივობის პანელი, რომელიც იხსნება და იხურება ღილაკით |
+| 🃏 | **ქარდების "დასტის" ეფექტი** | JavaScript ქარდის სურათს CSS ცვლადად (`--img-stack`) გადასცემს |
+| 🎨 | **ფერის ავტომატური შერჩევა** | Search გვერდზე ქარდის ფონი სურათის საშუალო ფერით იღებება (`canvas` API) |
+| 🎞️ | **ანიმაციები scroll-ზე** | Discover გვერდზე `IntersectionObserver` ანიმაციას იწყებს, როცა სექცია ეკრანზე გამოჩნდება |
+| 📂 | **ჩამოსაშლელი მენიუ** | Pins და Playlists მენიუები `<details>` ელემენტით, JavaScript-ის გარეშე |
+| 🎵 | **Player** | ქვედა პლეერი მობილურისთვის და გაფართოებული ვერსია დესკტოპისთვის |
+
+### 📐 Breakpoint-ები
+
+| მოწყობილობა | სიგანე |
 | --- | --- |
-| მთავარი (Home) | `index.html` |
-| Discover | `pages/discover.html` |
-| ძებნა (Search) | `pages/search.html` |
-| ბიბლიოთეკა (Library) | `pages/library.html` |
-| ალბომი | `pages/album.html` |
-| პლეილისტი | `pages/playlist.html` |
-| არტისტი | `pages/artist.html` |
-| სიმღერა | `pages/song.html` |
-| პოდკასტი | `pages/podcast.html` |
-| ეპიზოდი | `pages/episode.html` |
-| პროფილი | `pages/profile.html` |
-| Now Playing | `pages/now-playing.html`, `pages/now-playing-text.html`, `pages/now-playing-music-section.html` |
+| 📱 მობილური | `< 768px` |
+| 📟 ტაბლეტი | `≥ 768px` |
+| 💻 ლეპტოპი | `≥ 992px` / `≥ 1024px` |
+| 🖥️ დესკტოპი | `≥ 1280px` |
 
-## ფუნქციონალი
+---
 
-- **ადაპტირებული დიზაინი:** mobile-first მიდგომა, ძირითადი breakpoint-ები `768px`, `992px`, `1024px`, `1280px`.
-- **მუქი / ნათელი თემა:** გადამრთველი ზედა მენიუში, არჩევანი ინახება `localStorage`-ში და გვერდის განახლების შემდეგაც რჩება.
-- **Friends Activity პანელი:** იხსნება და იხურება მომხმარებლების ხატულით.
-- **ქარდების "დასტის" ეფექტი:** JavaScript ქარდის სურათს CSS ცვლადად (`--img-stack`) გადასცემს.
-- **ფერის ავტომატური შერჩევა:** Search გვერდზე ქარდის ფონი სურათის საშუალო ფერით იღებება (`canvas`-ით).
-- **ანიმაციები Discover გვერდზე:** `IntersectionObserver` ანიმაციას იწყებს მხოლოდ მაშინ, როცა სექცია ეკრანზე ჩანს.
-- **მობილური ნავიგაცია:** ქვედა მენიუ Home / Discover / Search / Library / Me.
-- **ნავიგაცია `<details>`-ით:** Pins და Playlists ჩამოსაშლელი მენიუები JavaScript-ის გარეშე.
+## 🗂 გვერდები
 
-## ტექნოლოგიები
+| გვერდი | ფაილი | აღწერა |
+| --- | --- | --- |
+| 🏠 Home | `index.html` | მთავარი გვერდი: პლეილისტები, მიქსები, არტისტები, ალბომები, პოდკასტები |
+| 🧭 Discover | `pages/discover.html` | ახალი მუსიკის აღმოჩენა ანიმაციებით |
+| 🔍 Search | `pages/search.html` | ძებნა და კატეგორიები |
+| 📚 Library | `pages/library.html` | მომხმარებლის ბიბლიოთეკა |
+| 💿 Album | `pages/album.html` | ალბომის გვერდი სიმღერების სიით |
+| 🎶 Playlist | `pages/playlist.html` | პლეილისტის გვერდი |
+| 🎤 Artist | `pages/artist.html` | არტისტის პროფილი |
+| 🎵 Song | `pages/song.html` | სიმღერის დეტალები და ტექსტი |
+| 🎙️ Podcast | `pages/podcast.html` | პოდკასტის გვერდი |
+| 📻 Episode | `pages/episode.html` | პოდკასტის ეპიზოდი |
+| 👤 Profile | `pages/profile.html` | მომხმარებლის პროფილი |
+| ▶️ Now Playing | `pages/now-playing*.html` | მიმდინარე სიმღერის 3 ხედი: პლეერი, ტექსტი, რიგი |
 
-- HTML5
-- SCSS (Sass modules, `@use`)
-- Vanilla JavaScript
-- შრიფტი: [Satoshi](https://www.fontshare.com/fonts/satoshi)
+---
 
-## პროექტის სტრუქტურა
+## 🛠 ტექნოლოგიები
+
+- **HTML5:** სემანტიკური ელემენტები (`header`, `nav`, `main`, `aside`, `section`, `article`, `footer`)
+- **SCSS:** Sass მოდულები (`@use`), ცვლადები, mixin-ები
+- **JavaScript (ES6+):** `localStorage`, `IntersectionObserver`, `Canvas API`
+- **შრიფტი:** [Satoshi](https://www.fontshare.com/fonts/satoshi)
+
+---
+
+## 📁 პროექტის სტრუქტურა
+
+<details>
+<summary><b>დააჭირე სტრუქტურის სანახავად</b></summary>
+
+<br />
 
 ```
 Markup-Exam-10x/
 ├── index.html
-├── pages/                  # შიდა გვერდები
-├── assets/
-│   ├── fonts/Satoshi/
-│   ├── img/                # სურათები და ხატულები
-│   ├── js/main.js
-│   └── styles/
-│       ├── style.scss      # მთავარი SCSS ფაილი
-│       ├── style.css       # დაკომპილირებული CSS
-│       ├── abstracts/      # ცვლადები და mixin-ები
-│       ├── base/           # reset და შრიფტები
-│       ├── components/     # ღილაკები, ქარდები, ხატულები
-│       ├── layouts/        # header, aside, player და გვერდების განლაგება
-│       ├── sections/       # ცალკეული სექციები
-│       └── animations/
-└── favicon.ico
+├── favicon.ico
+├── pages/                     # შიდა გვერდები (13 ფაილი)
+└── assets/
+    ├── fonts/Satoshi/         # შრიფტები
+    ├── img/                   # სურათები და ხატულები
+    ├── js/
+    │   └── main.js            # მთელი ინტერაქტივი
+    └── styles/
+        ├── style.scss         # მთავარი SCSS ფაილი
+        ├── style.css          # დაკომპილირებული CSS
+        ├── abstracts/         # ცვლადები და mixin-ები
+        ├── base/              # reset და შრიფტები
+        ├── components/        # ღილაკები, ქარდები, ხატულები
+        ├── layouts/           # header, sidebar, player, გვერდების განლაგება
+        ├── sections/          # ცალკეული სექციები
+        └── animations/        # ანიმაციები და hover ეფექტები
 ```
 
-## გაშვება
+</details>
 
-1. დააკლონე რეპოზიტორია:
-   ```bash
-   git clone https://github.com/1ak0/Markup-Exam-10x.git
-   ```
-2. გახსენი საქაღალდე VS Code-ში.
-3. გაუშვი **Live Server** გაფართოებით (`index.html` → მარჯვენა კლიკი → *Open with Live Server*).
+---
 
-> ფაილის პირდაპირ გახსნისას (`file://`) Search გვერდზე ფერის ავტომატური შერჩევა არ მუშაობს ბრაუზერის უსაფრთხოების წესების გამო, ამიტომ გამოიყენე Live Server.
+## 🚀 გაშვება
 
-### SCSS-ის დაკომპილირება
+**1. დააკლონე რეპოზიტორია**
 
-სტილების შეცვლისას `style.scss` უნდა დაკომპილირდეს `style.css`-ში. მაგალითად, **Live Sass Compiler** გაფართოებით, ან ტერმინალით:
+```bash
+git clone https://github.com/1ak0/Markup-Exam-10x.git
+cd Markup-Exam-10x
+```
+
+**2. გაუშვი Live Server-ით**
+
+გახსენი საქაღალდე VS Code-ში → `index.html` → მარჯვენა კლიკი → **Open with Live Server**
+
+> [!NOTE]
+> ფაილის პირდაპირ გახსნისას (`file://`) Search გვერდზე ფერის ავტომატური შერჩევა არ მუშაობს ბრაუზერის უსაფრთხოების წესების გამო. ამიტომ გამოიყენე Live Server.
+
+**3. SCSS-ის დაკომპილირება** (თუ სტილებს ცვლი)
 
 ```bash
 sass --watch assets/styles/style.scss assets/styles/style.css
 ```
 
-## ავტორი
-
-**Iako** · [GitHub](https://github.com/1ak0)
+ან გამოიყენე VS Code-ის გაფართოება **Live Sass Compiler**.
 
 ---
 
-პროექტი შექმნილია სასწავლო მიზნით. Spotify-ის სახელი, დიზაინი და გამოყენებული ალბომების/არტისტების სურათები ეკუთვნის მათ მფლობელებს.
+## 👤 ავტორი
+
+**Iako**
+
+[![GitHub](https://img.shields.io/badge/GitHub-1ak0-181717?style=flat&logo=github)](https://github.com/1ak0)
+
+---
+
+<div align="center">
+
+<sub>პროექტი შექმნილია სასწავლო მიზნით. Spotify-ის სახელი, დიზაინი და ალბომების/არტისტების სურათები ეკუთვნის მათ მფლობელებს.</sub>
+
+<br />
+
+⭐ თუ პროექტი მოგეწონა, დაუტოვე ვარსკვლავი!
+
+</div>
