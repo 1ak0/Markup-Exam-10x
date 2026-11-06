@@ -51,4 +51,118 @@
 | 🎨 | **ფერის ავტომატური შერჩევა** | Search გვერდზე ქარდის ფონი სურათის საშუალო ფერით იღებება (`canvas` API) |
 | 🎞️ | **ანიმაციები scroll-ზე** | Discover გვერდზე `IntersectionObserver` ანიმაციას იწყებს, როცა სექცია ეკრანზე გამოჩნდება |
 | 📂 | **ჩამოსაშლელი მენიუ** | Pins და Playlists მენიუები `<details>` ელემენტით, JavaScript-ის გარეშე |
-| 🎵 | **Player** |
+| 🎵 | **Player** | ქვედა პლეერი მობილურისთვის და გაფართოებული ვერსია დესკტოპისთვის |
+
+### 📐 Breakpoint-ები
+
+| მოწყობილობა | სიგანე |
+| --- | --- |
+| 📱 მობილური | `< 768px` |
+| 📟 ტაბლეტი | `≥ 768px` |
+| 💻 ლეპტოპი | `≥ 992px` / `≥ 1024px` |
+| 🖥️ დესკტოპი | `≥ 1280px` |
+
+---
+
+## 🗂 გვერდები
+
+| გვერდი | ფაილი | აღწერა |
+| --- | --- | --- |
+| 🏠 Home | `index.html` | მთავარი გვერდი: პლეილისტები, მიქსები, არტისტები, ალბომები, პოდკასტები |
+| 🧭 Discover | `pages/discover.html` | ახალი მუსიკის აღმოჩენა ანიმაციებით |
+| 🔍 Search | `pages/search.html` | ძებნა და კატეგორიები |
+| 📚 Library | `pages/library.html` | მომხმარებლის ბიბლიოთეკა |
+| 💿 Album | `pages/album.html` | ალბომის გვერდი სიმღერების სიით |
+| 🎶 Playlist | `pages/playlist.html` | პლეილისტის გვერდი |
+| 🎤 Artist | `pages/artist.html` | არტისტის პროფილი |
+| 🎵 Song | `pages/song.html` | სიმღერის დეტალები და ტექსტი |
+| 🎙️ Podcast | `pages/podcast.html` | პოდკასტის გვერდი |
+| 📻 Episode | `pages/episode.html` | პოდკასტის ეპიზოდი |
+| 👤 Profile | `pages/profile.html` | მომხმარებლის პროფილი |
+| ▶️ Now Playing | `pages/now-playing*.html` | მიმდინარე სიმღერის 3 ხედი: პლეერი, ტექსტი, რიგი |
+
+---
+
+## 🛠 ტექნოლოგიები
+
+- **HTML5:** სემანტიკური ელემენტები (`header`, `nav`, `main`, `aside`, `section`, `article`, `footer`)
+- **SCSS:** Sass მოდულები (`@use`), ცვლადები, mixin-ები
+- **JavaScript (ES6+):** `localStorage`, `IntersectionObserver`, `Canvas API`
+- **შრიფტი:** [Satoshi](https://www.fontshare.com/fonts/satoshi)
+
+---
+
+## 📁 პროექტის სტრუქტურა
+
+<details>
+<summary><b>დააჭირე სტრუქტურის სანახავად</b></summary>
+
+<br />
+
+```
+Markup-Exam-10x/
+├── index.html
+├── pages/                     # შიდა გვერდები (13 ფაილი)
+└── assets/
+    ├── fonts/Satoshi/         # შრიფტები
+    ├── img/                   # სურათები და ხატულები
+    ├── js/
+    │   └── main.js            # მთელი ინტერაქტივი
+    └── styles/
+        ├── style.scss         # მთავარი SCSS ფაილი
+        ├── style.css          # დაკომპილირებული CSS
+        ├── abstracts/         # ცვლადები და mixin-ები
+        ├── base/              # reset და შრიფტები
+        ├── components/        # ღილაკები, ქარდები, ხატულები
+        ├── layouts/           # header, sidebar, player, გვერდების განლაგება
+        ├── sections/          # ცალკეული სექციები
+        └── animations/        # ანიმაციები და hover ეფექტები
+```
+
+</details>
+
+---
+
+## 🚀 გაშვება
+
+**1. დააკლონე რეპოზიტორია**
+
+```bash
+git clone https://github.com/1ak0/Markup-Exam-10x.git
+cd Markup-Exam-10x
+```
+
+**2. გაუშვი Live Server-ით**
+
+გახსენი საქაღალდე VS Code-ში → `index.html` → მარჯვენა კლიკი → **Open with Live Server**
+
+> [!NOTE]
+> ფაილის პირდაპირ გახსნისას (`file://`) Search გვერდზე ფერის ავტომატური შერჩევა არ მუშაობს ბრაუზერის უსაფრთხოების წესების გამო. ამიტომ გამოიყენე Live Server.
+
+**3. SCSS-ის დაკომპილირება** (თუ სტილებს ცვლი)
+
+```bash
+sass --watch assets/styles/style.scss assets/styles/style.css
+```
+
+ან გამოიყენე VS Code-ის გაფართოება **Live Sass Compiler**.
+
+---
+
+## 👤 ავტორი
+
+**Iako**
+
+[![GitHub](https://img.shields.io/badge/GitHub-1ak0-181717?style=flat&logo=github)](https://github.com/1ak0)
+
+---
+
+<div align="center">
+
+<sub>პროექტი შექმნილია სასწავლო მიზნით. Spotify-ის სახელი, დიზაინი და ალბომების/არტისტების სურათები ეკუთვნის მათ მფლობელებს.</sub>
+
+<br />
+
+⭐ თუ პროექტი მოგეწონა, დაუტოვე ვარსკვლავი!
+
+</div>
