@@ -151,7 +151,7 @@ sass --watch assets/styles/style.scss assets/styles/style.css
 
 ## 👤 ავტორი
 
-**Iako**
+**Ia Gigolashvili**
 
 [![GitHub](https://img.shields.io/badge/GitHub-1ak0-181717?style=flat&logo=github)](https://github.com/1ak0)
 
