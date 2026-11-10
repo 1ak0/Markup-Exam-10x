@@ -163,6 +163,5 @@ sass --watch assets/styles/style.scss assets/styles/style.css
 
 <br />
 
-⭐ თუ პროექტი მოგეწონა, დაუტოვე ვარსკვლავი!
 
 </div>
